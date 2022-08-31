@@ -1,0 +1,151 @@
+{
+  "name": "london",
+	"displayName": "London",
+	"description": "$$$$",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.69.0"
+	},
+	"categories": [
+		"Other"
+	],
+	
+	
+	"activationEvents": [
+        "onCommand:london.helloWorld",
+		"onCommand:kID"
+	],
+		
+	"main": "./extension.js",
+	
+	"contributes": {
+
+		"viewsContainers": {
+			"activitybar": [
+				{
+					"id": "pe",
+					"title": "Port Authority",
+					"icon": "$(circuit-board)"
+				}],
+
+			"panel": [
+				{
+					"id": "pdd",
+					"title": "PA",
+					"icon": "$(heart)"
+				}
+			]
+		},
+
+		"views": {
+			"pe":[
+				{
+					"id":"pd",
+					"name": "Select New Code",
+					"description":"MY gf g vh ",
+					"icon":"$(refresh)"
+				},
+				{
+					"id":"pf",
+					"name": "Reload from Recent files",
+					"icon": "$(check-list)"
+				}
+			],
+
+			"pdd":[
+				{
+					"id": "pg",
+					"name": "THIRTEEN",
+					"icon": "$(add)"
+				}
+			]
+
+		},
+
+		"commands": [{
+            "command": "london.helloWorld",
+        	"title": "Hello World",
+			"icon":"$(add)"
+			},
+
+			{
+			"command": "pf.addEntry",
+			"title": "Refresh"	
+			},
+
+			{
+			"command": "kID",
+			"title": "ID"	
+			}
+		],
+
+		"menus": {
+			"view/title": [
+				{
+					"command": "london.helloWorld",
+					"when": "view == pd"
+				},
+				{
+					"command": "kID",
+					"when": "view == pf"
+				}
+			]
+		},
+
+		"submenus": [
+			{
+				"id": "pd.nine",
+				"label":"NINE"
+			},
+			{
+				"id":"pd.ten",
+				"label":"EIGHT"
+			}
+		],
+
+		"walkthroughs": [
+			{
+				"id": "pde",
+				"title": "TRIAL",
+				"description": "dfdgfg",
+				"steps": [
+					{
+						"id": "WTone",
+						"title": "THREE",
+						"description": "gftt tfg f",
+						"completionEvents": [
+							"onCommand:london.helloWorld"
+						],
+						"media": {
+							"altText": "O",
+							"image": "media/m.png"
+						}
+					}
+
+				]
+			}
+		]
+	},
+
+
+
+
+
+	"scripts": {
+		"lint": "eslint .",
+		"pretest": "npm run lint",
+		"test": "node ./test/runTest.js"
+	},
+	"devDependencies": {
+        "@types/vscode": "^1.69.0",
+        "@types/glob": "^7.2.0",
+        "@types/mocha": "^9.1.1",
+        "@types/node": "16.x",
+        "eslint": "^8.16.0",
+        "glob": "^8.0.3",
+        "mocha": "^10.0.0",
+        "typescript": "^4.7.2",
+        "@vscode/test-electron": "^2.1.3"
+    }
+
+}
